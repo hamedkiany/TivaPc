@@ -1,0 +1,118 @@
+
+**** Build of configuration Debug for project S2T2 ****
+
+/Applications/ti/ccs1220/ccs/utils/bin/gmake -k -j 7 all -O 
+ 
+Building file: "../blinkyAPI.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/hamedkiany/Documents/workspace/S2T2" --include_path="/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="blinkyAPI.d_raw"  "../blinkyAPI.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'blinkyAPI.obj' failed
+"../driverlib/sysctl.h", line 582: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 583: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 584: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 585: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 585: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 586: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 586: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 587: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 588: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 589: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 590: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 591: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 592: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 593: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 594: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 595: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 596: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 599: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 600: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 601: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 602: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 602: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 603: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 604: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 605: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 606: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 607: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 608: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 612: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 613: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 614: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 615: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 616: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 617: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 618: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 618: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 619: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 620: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 621: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 622: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 623: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 624: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 625: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 626: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 627: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 628: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 630: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 631: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 634: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 634: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 635: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 636: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 637: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 638: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 638: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 639: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 640: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 641: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 642: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 643: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 644: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 645: error #20: identifier "bool" is undefined
+"../driverlib/sysctl.h", line 645: error #20: identifier "uint32_t" is undefined
+"../driverlib/sysctl.h", line 645: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 141: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 141: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 142: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 143: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 143: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 143: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 144: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 144: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 145: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 146: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 146: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 146: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 147: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 147: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 148: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 148: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 149: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 149: error #20: identifier "uint8_t" is undefined
+"../driverlib/gpio.h", line 150: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 150: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 151: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 151: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 152: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 152: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 153: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 153: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 153: error #20: identifier "bool" is undefined
+"../driverlib/gpio.h", line 154: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 154: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 155: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 156: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 157: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 157: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 159: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 159: error #20: identifier "uint32_t" is undefined
+"../driverlib/gpio.h", line 160: error #20: identifier "int32_t" is undefined
+Error limit reached.
+100 errors detected in the compilation of "../blinkyAPI.c".
+Compilation terminated.
+gmake: *** [blinkyAPI.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

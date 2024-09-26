@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item key="BUILD_NOW" value="true"/>
+		<item key="BUILD_ALL" value="true"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
+		<item key="DIALOG_WIDTH" value="540"/>
+		<item key="DIALOG_HEIGHT" value="442"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="538"/>
+		<item key="DIALOG_Y_ORIGIN" value="170"/>
+		<item key="DIALOG_WIDTH" value="586"/>
+		<item key="DIALOG_HEIGHT" value="528"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/hamedkiany/Documents/workspace"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
+			<item value="/Users/hamedkiany/Documents/workspace/tutorial-FreeRTOS"/>
+			<item value="/Users/hamedkiany/Documents/workspace/S2T6-5"/>
+			<item value="/Users/hamedkiany/Library/CloudStorage/OneDrive-Personal/micro/examen2"/>
+			<item value="/Users/hamedkiany/Library/CloudStorage/OneDrive-Personal/micro/P4-8"/>
+			<item value="/Users/hamedkiany/Library/CloudStorage/OneDrive-Personal/micro/P4-9"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/Users/hamedkiany/Documents/workspace/ejercicio-FreeRTOS.zip"/>
+			<item value="/Users/hamedkiany/Downloads/FreeRTOS-20240313/tutorial-FreeRTOSPt3.zip"/>
+			<item value="/Users/hamedkiany/Downloads/FreeRTOS-20240313/tutorial-FreeRTOSPt2.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_6/TimerBotonesFusionado.zip"/>
+			<item value="/Users/hamedkiany/Downloads/Recursos para los ejercicios CCS y TIVAWARE-20240313/StackOverflow.zip"/>
+			<item value="/Users/hamedkiany/Downloads/FreeRTOS-20240313/tutorial-FreeRTOS.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_6/Tutorial3RGB.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_6/Tutorial3PWM.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_6/Tutorial3Timers.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_6/Tutorial3Timersb.zip"/>
+			<item value="/Users/hamedkiany/Documents/workspace/Proyecto_CCS_TIVA_5/S2T5.zip"/>
+			<item value=""/>
+		</list>
+	</section>
+</section>

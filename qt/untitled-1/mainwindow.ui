@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="Led" name="led">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>70</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Color Led component</string>
+    </property>
+    <property name="whatsThis">
+     <string>Led indicator</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_boton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="ManoMeter" name="manometer">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>260</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Shows the pressure</string>
+    </property>
+    <property name="whatsThis">
+     <string>The bar meter widget displays the pressure attached to it</string>
+    </property>
+   </widget>
+   <widget class="QwtKnob" name="m_knoba">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>330</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QwtKnob" name="m_knob_b">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>340</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ManoMeter</class>
+   <extends>QWidget</extends>
+   <header>analogwidgets/manometer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Led</class>
+   <extends>QWidget</extends>
+   <header>analogwidgets/led.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtKnob</class>
+   <extends>QWidget</extends>
+   <header>qwt_knob.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

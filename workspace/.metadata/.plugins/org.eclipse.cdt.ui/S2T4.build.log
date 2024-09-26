@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project S2T4 ****
+
+/Applications/ti/ccs1220/ccs/utils/bin/gmake -k -j 7 all -O 
+ 
+gmake[1]: 'S2T4.out' is up to date.
+
+**** Build Finished ****

@@ -1,0 +1,20 @@
+
+**** Build of configuration Debug for project P4-5 ****
+
+/Applications/ti/ccs1220/ccs/utils/bin/gmake -k -j 7 all -O 
+ 
+Building file: "../P4-5.c"
+Invoking: MSP430 Compiler
+"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="/Applications/ti/ccs1220/ccs/ccs_base/msp430/include" --include_path="/Users/hamedkiany/Documents/workspace/P4-5" --include_path="/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="P4-5.d_raw"  "../P4-5.c"
+Finished building: "../P4-5.c"
+ 
+Building target: "P4-5.out"
+Invoking: MSP430 Linker
+"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"P4-5.map" --heap_size=80 --stack_size=80 -i"/Applications/ti/ccs1220/ccs/ccs_base/msp430/include" -i"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/Applications/ti/ccs1220/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="P4-5_linkInfo.xml" --use_hw_mpy=none --rom_model -o "P4-5.out" "./P4-5.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "P4-5.out"
+ 
+
+**** Build Finished ****

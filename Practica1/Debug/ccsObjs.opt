@@ -1,0 +1,4 @@
+"./Depuracion.obj"
+"./ledtest.obj"
+"../lnk_msp430g2553.cmd"
+-llibc.a

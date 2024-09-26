@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="Led" name="ledA">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>70</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Color Led component</string>
+    </property>
+    <property name="whatsThis">
+     <string>Led indicator</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="m_boton">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="ManoMeter" name="manometer">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>260</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Shows the pressure</string>
+    </property>
+    <property name="whatsThis">
+     <string>The bar meter widget displays the pressure attached to it</string>
+    </property>
+   </widget>
+   <widget class="QwtKnob" name="m_knoba">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>330</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QwtKnob" name="m_knob_b">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>340</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="m_check">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>460</y>
+      <width>76</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>visible</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>130</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>exit</string>
+    </property>
+   </widget>
+   <widget class="Led" name="ledB">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>130</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Color Led component</string>
+    </property>
+    <property name="whatsThis">
+     <string>Led indicator</string>
+    </property>
+    <property name="color">
+     <color>
+      <red>0</red>
+      <green>85</green>
+      <blue>255</blue>
+     </color>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox1">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>130</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CheckBox</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CheckBox</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>190</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CheckBox</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ManoMeter</class>
+   <extends>QWidget</extends>
+   <header>analogwidgets/manometer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Led</class>
+   <extends>QWidget</extends>
+   <header>analogwidgets/led.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtKnob</class>
+   <extends>QWidget</extends>
+   <header>qwt_knob.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>710</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>374</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_check</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>manometer</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>664</x>
+     <y>482</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>682</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

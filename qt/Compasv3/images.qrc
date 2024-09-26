@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/Aguja.png</file>
+        <file>img/EngineButton.png</file>
+        <file>img/EngineButtonStart.png</file>
+        <file>img/EngineButtonStop.png</file>
+        <file>img/gtk_refresh.png</file>
+        <file>img/planeTop.png</file>
+        <file>img/planeTopRed.png</file>
+        <file>img/YAW.png</file>
+        <file>img/PITCH.png</file>
+        <file>img/DronePerfil.png</file>
+        <file>img/Drone-Top.png</file>
+        <file>img/DronePerfil2.png</file>
+        <file>img/Volante.png</file>
+        <file>img/Volante2.png</file>
+        <file>img/Volante3.png</file>
+    </qresource>
+</RCC>
