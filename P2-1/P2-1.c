@@ -1,9 +1,9 @@
 /***********************************
  *          Microcontroladores
- *      Práctica 2: Puertos E/S
+ *      PraÌ�ctica 2: Puertos E/S
  *      p2.1
  *      Hamed Kiany Nejad
- *      18/02/2023
+ *      18/02/2024
  ***********************************/
 
 
