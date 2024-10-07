@@ -25,7 +25,7 @@
 #include "inc/hw_memmap.h"
 #include "inc/hw_sysctl.h"
 #include "inc/hw_types.h"
-
+//#include "inc/PWMLib.h"
 #include "driverlib/debug.h"
 #include "driverlib/gpio.h"
 #include "driverlib/uart.h"
@@ -38,6 +38,7 @@
 #include "utils/uartstdio.h"
 
 #include "drivers/rgb.h"
+int VelocidadF21 = 75;
 
 // ==============================================================================
 // The CPU usage in percent, in 16.16 fixed point format.
@@ -322,6 +323,131 @@ static int Cmd_rgb(int argc, char *argv[])
 }
 
 
+// ==============================================================================
+// Implementa el comando "Active PWM"
+// ==============================================================================
+static int Cmd_AcMo(int argc, char *argv[])
+{
+    uint32_t arrayPWM[2];
+
+    if (argc != 3)
+    {
+        //Si los par�metros no son suficientes, muestro la ayuda
+        UARTprintf(" PWM [PF2] [PF3]\r\n");
+    }
+    else
+    {
+        arrayPWM[0]=strtoul(argv[1], NULL, 10);
+        arrayPWM[1]=strtoul(argv[2], NULL, 10);
+
+        if ((arrayPWM[0] > 100)||(arrayPWM[1] > 100)|| (arrayPWM[0] < 50)||(arrayPWM[1] < 50))
+        {
+
+            UARTprintf(" out of range \r\n");
+        }
+        else{
+            activatePWM(arrayPWM[0],arrayPWM[1]);
+        }
+    }
+
+    return 0;
+}
+static int Cmd_X(int argc, char *argv[])
+{
+    uint32_t arrayPWM[2];
+
+    if (argc != 1)
+    {
+        //Si los par�metros no son suficientes, muestro la ayuda
+        UARTprintf(" X\r\n");
+    }
+    else
+    {
+        arrayPWM[0]=strtoul(argv[1], NULL, 10);
+        arrayPWM[1]=strtoul(argv[2], NULL, 10);
+        if (VelocidadF21 > 74 && VelocidadF21 < 101){
+            if(!(VelocidadF21 == 100))
+                    VelocidadF21 = VelocidadF21 + 5;
+                    activatePWM(VelocidadF21,VelocidadF21);
+                }
+
+
+//        if ((arrayPWM[0] > 100)||(arrayPWM[1] > 100)|| (arrayPWM[0] < 50)||(arrayPWM[1] < 50))
+//        {
+//
+//            UARTprintf(" out of range \r\n");
+//        }
+//        else{
+//            activatePWM(arrayPWM[0],arrayPWM[1]);
+//        }
+    }
+
+    return 0;
+}
+
+static int Cmd_Y(int argc, char *argv[])
+{
+    uint32_t arrayPWM[2];
+
+    if (argc != 1)
+    {
+        //Si los par�metros no son suficientes, muestro la ayuda
+        UARTprintf(" Y\r\n");
+    }
+    else
+    {
+        arrayPWM[0]=strtoul(argv[1], NULL, 10);
+        arrayPWM[1]=strtoul(argv[2], NULL, 10);
+        if (VelocidadF21 > 74 && VelocidadF21 < 101){
+             if(!(VelocidadF21 == 75))
+                     VelocidadF21 = VelocidadF21 - 5;
+             activatePWM(VelocidadF21,VelocidadF21);
+         }
+
+
+//        if ((arrayPWM[0] > 100)||(arrayPWM[1] > 100)|| (arrayPWM[0] < 50)||(arrayPWM[1] < 50))
+//        {
+//
+//            UARTprintf(" out of range \r\n");
+//        }
+//        else{
+//            activatePWM(arrayPWM[0],arrayPWM[1]);
+//        }
+    }
+
+    return 0;
+}
+
+
+// ==============================================================================
+// Implementa el comando "Desativate PWM"
+// ==============================================================================
+static int Cmd_DcMo(int argc, char *argv[])
+{
+    uint32_t arrayPWM[3];
+
+    if (argc != 3)
+    {
+        //Si los par�metros no son suficientes, muestro la ayuda
+        UARTprintf(" PWM [PF2] [PF3]\r\n");
+    }
+    else
+    {
+        arrayPWM[0]=strtoul(argv[1], NULL, 10);
+        arrayPWM[1]=strtoul(argv[2], NULL, 10);
+
+        if ((arrayPWM[0] > 100)||(arrayPWM[1] > 100)|| (arrayPWM[0] < 0)||(arrayPWM[1] < 0))
+        {
+
+            UARTprintf(" out of range \r\n");
+        }
+        else{
+            activatePWM(arrayPWM[0],arrayPWM[1]);
+        }
+    }
+
+    return 0;
+}
 
 
 // ==============================================================================
@@ -339,7 +465,12 @@ tCmdLineEntry g_psCmdTable[] =
     { "rgb",  	  Cmd_rgb,       "      : Establece el color RGB" },
     { "intensity",      Cmd_intensity,       "      : Cambia el nivel de intensidad" },
     { "free",     Cmd_free,      "     : Muestra la memoria libre" },
-#if ( configUSE_TRACE_FACILITY == 1 )
+    { "ActMot",    Cmd_AcMo,     "    : Activate PWM for Motor" },
+    { "DecMot",    Cmd_DcMo,     "    : Desvtivate PWM" },
+    { "X",    Cmd_X,     "    : Subir Vlocidad Motor" },
+    { "Y",    Cmd_Y,     "    : Bajar Velocidad Motor" },
+
+    #if ( configUSE_TRACE_FACILITY == 1 )
 	{ "tasks",    Cmd_tasks,     "    : Muestra informacion de las tareas" },
 #endif
 #if (configGENERATE_RUN_TIME_STATS)

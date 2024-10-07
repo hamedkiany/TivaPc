@@ -15,10 +15,13 @@ main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_st
 main.obj: ../inc/hw_memmap.h
 main.obj: ../inc/hw_types.h
 main.obj: ../inc/hw_ints.h
-main.obj: ../driverlib/gpio.h
-main.obj: ../driverlib/pin_map.h
+main.obj: ../inc/PWMLib.h
+main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/pin_map.h
+main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/inc/hw_gpio.h
+main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/sysctl.h
+main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/gpio.h
+main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/pwm.h
 main.obj: ../driverlib/rom.h
-main.obj: ../driverlib/sysctl.h
 main.obj: ../driverlib/uart.h
 main.obj: ../driverlib/interrupt.h
 main.obj: ../driverlib/adc.h
@@ -81,13 +84,19 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/sys/_stdint.h:
 
 ../inc/hw_ints.h:
 
-../driverlib/gpio.h:
+../inc/PWMLib.h:
 
-../driverlib/pin_map.h:
+C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/pin_map.h:
+
+C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/inc/hw_gpio.h:
+
+C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/sysctl.h:
+
+C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/gpio.h:
+
+C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/driverlib/pwm.h:
 
 ../driverlib/rom.h:
-
-../driverlib/sysctl.h:
 
 ../driverlib/uart.h:
 

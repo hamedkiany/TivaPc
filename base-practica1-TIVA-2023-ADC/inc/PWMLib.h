@@ -28,18 +28,19 @@
 #include "driverlib/gpio.h"
 #include "driverlib/pwm.h"
 
-int activate(uint32_t VelocidadF2, uint32_t VelocidadF3)
+int activatePWM(uint32_t VelocidadF2, uint32_t VelocidadF3)
 {
     //Set the clock
-   SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_OSC |   SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
+   //SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_OSC |   SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
    //Configure PWM Clock to match system
    SysCtlPWMClockSet(SYSCTL_PWMDIV_64);
 
    // Enable the peripherals used by this program.
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    SysCtlPeripheralSleepEnable(SYSCTL_PERIPH_GPIOF);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);  //The Tiva Launchpad has two modules (0 and 1). Module 1 covers the LED pins
-
+    SysCtlPeripheralSleepEnable(SYSCTL_PERIPH_PWM1);
     //Configure PF1,PF2,PF3 Pins as PWM
     //GPIOPinConfigure(GPIO_PF1_M1PWM5);
     GPIOPinConfigure(GPIO_PF2_M1PWM6);
@@ -57,7 +58,6 @@ int activate(uint32_t VelocidadF2, uint32_t VelocidadF3)
     PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, 1000);
 
     //Set PWM duty-50% (Period /2)
-    //PWMPulseWidthSet(PWM1_BASE, PWM_OUT_5,100);
     PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6,VelocidadF2);
     PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7,VelocidadF3);
 
@@ -67,7 +67,12 @@ int activate(uint32_t VelocidadF2, uint32_t VelocidadF3)
 
     // Turn on the Output pins
     PWMOutputState(PWM1_BASE,  PWM_OUT_6_BIT | PWM_OUT_7_BIT, true);
+    return 0;
+}
 
-
-
+int configPWM(uint32_t VelocidadF2, uint32_t VelocidadF3)
+{
+    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6,VelocidadF2);
+    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_7,VelocidadF3);
+    return 0;
 }

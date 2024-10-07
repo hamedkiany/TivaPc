@@ -109,6 +109,16 @@
       </item>
      </layout>
     </widget>
+    <widget class="JoyPad" name="joypad">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>150</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -306,6 +316,11 @@
    <class>color_widgets::ColorWheel</class>
    <extends>QWidget</extends>
    <header>color_wheel.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>JoyPad</class>
+   <extends>QWidget</extends>
+   <header>joypad.h</header>
   </customwidget>
   <customwidget>
    <class>QwtKnob</class>

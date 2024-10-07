@@ -11,6 +11,8 @@
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "inc/hw_ints.h"
+#include "inc/PWMLib.h"
+
 #include "driverlib/gpio.h"
 #include "driverlib/pin_map.h"
 #include "driverlib/rom.h"
@@ -42,11 +44,15 @@
 #define COMMAND_TASK_PRIORITY (tskIDLE_PRIORITY+1)
 #define ADC_TASK_STACK (256)
 #define ADC_TASK_PRIORITY (tskIDLE_PRIORITY+1)
-
+#define SW1TASKPRIO (tskIDLE_PRIORITY+1)            // Prioridad para la tarea SW1TASK
+#define SW1TASKSTACKSIZE (256)     // Tamaño de pila para la tarea SW1TASK
+#define SW2TASKPRIO (tskIDLE_PRIORITY+1)            // Prioridad para la tarea SW1TASK
+#define SW2TASKSTACKSIZE (256)     // Tamaño de pila para la tarea SW1TASK
 //Globales
 uint32_t g_ui32CPUUsage;
 uint32_t g_ulSystemClock;
-
+int VelocidadF2 = 75 , VelocidadF3 = 75;
+SemaphoreHandle_t miSemaforo,miSemaforo2;
 //*****************************************************************************
 //
 // The error routine that is called if the driver library encounters an error.
@@ -147,6 +153,52 @@ static portTASK_FUNCTION(ADCTask,pvParameters)
     }
 }
 
+//static void Switch1Task(void *pvParameters)
+static portTASK_FUNCTION(Switch1Task,pvParameters)
+{
+
+    xSemaphoreTake(miSemaforo,portMAX_DELAY);
+    //
+    // Loop forever.
+    //
+    while(1)
+    {
+//        MESSAGE_SW_PARAMETER parametro;
+//        parametro.sw.number = 1;
+//        //parametro.sw.state = 1;
+        if (VelocidadF2 > 74 && VelocidadF2 < 101){
+            if(!(VelocidadF2 == 75))
+                    VelocidadF2 = VelocidadF2 - 5;
+            activatePWM(VelocidadF2,VelocidadF2);
+        }
+       xSemaphoreTake(miSemaforo,portMAX_DELAY);
+//        remotelink_sendMessage(MESSAGE_SW,&parametro,sizeof(parametro));
+//       UARTprintf("He puesto botton ye mandado mensaje\n");
+    }
+}
+
+static portTASK_FUNCTION(Switch2Task,pvParameters)
+{
+    xSemaphoreTake(miSemaforo2,portMAX_DELAY);
+    //
+    // Loop forever.
+    //
+    while(1)
+    {
+//        MESSAGE_SW_PARAMETER parametro;
+//        parametro.sw.number = 2;
+//        //parametro.sw.state = 1;
+        if (VelocidadF2 > 74 && VelocidadF2 < 101){
+            if(!(VelocidadF2 == 100))
+                    VelocidadF2 = VelocidadF2 + 5;
+                    activatePWM(VelocidadF2,VelocidadF2);
+                }
+        xSemaphoreTake(miSemaforo2,portMAX_DELAY);
+//        remotelink_sendMessage(MESSAGE_SW,&parametro,sizeof(parametro));
+        //UARTprintf("He puesto botton drecha ye mandado mensaje\n");
+    }
+}
+
 
 //Funcion callback que procesa los mensajes recibidos desde el PC (ejecuta las acciones correspondientes a las ordenes recibidas)
 static int32_t messageReceived(uint8_t message_type, void *parameters, int32_t parameterSize)
@@ -213,10 +265,11 @@ int main(void)
 {
 
 	//
-	// Set the clocking to run at 40 MHz from the PLL.
+	// Set the clocking to run at 50 MHz from the PLL.
 	//
-	MAP_SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ |
-			SYSCTL_OSC_MAIN);	//Ponermos el reloj principal a 40 MHz (200 Mhz del Pll dividido por 5)
+//	MAP_SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ |
+//			SYSCTL_OSC_MAIN);	//Ponermos el reloj principal a 50 MHz (200 Mhz del Pll dividido por 5)
+   MAP_SysCtlClockSet(SYSCTL_SYSDIV_5 | SYSCTL_USE_PLL |   SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
 
 	// Get the system clock speed.
@@ -237,10 +290,18 @@ int main(void)
 	MAP_SysCtlPeripheralSleepEnable(GREEN_TIMER_PERIPH);
 	MAP_SysCtlPeripheralSleepEnable(BLUE_TIMER_PERIPH);
 	MAP_SysCtlPeripheralSleepEnable(RED_TIMER_PERIPH);	//Redundante porque BLUE_TIMER_PERIPH y GREEN_TIMER_PERIPH son el mismo
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
 	//Volvemos a configurar los LEDs en modo GPIO POR Defecto
 	MAP_GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+	ButtonsInit();
+    MAP_IntPrioritySet(INT_GPIOF,configMAX_SYSCALL_INTERRUPT_PRIORITY);//para añadir prioridad by HAMED
+    MAP_GPIOIntEnable(GPIO_PORTF_BASE,ALL_BUTTONS);
+    MAP_IntEnable(INT_GPIOF);
 
+
+    miSemaforo = xSemaphoreCreateBinary();
+    miSemaforo2 = xSemaphoreCreateBinary();
 
 	/********************************      Creacion de tareas *********************/
 
@@ -257,7 +318,8 @@ int main(void)
 	    while(1); //Inicializo la aplicacion de comunicacion con el PC (Remote). Ver fichero remotelink.c
 	}
 
-
+	   miSemaforo = xSemaphoreCreateBinary();
+	    miSemaforo2 = xSemaphoreCreateBinary();
 	//Para especificacion 2: Inicializa el ADC y crea una tarea...
 	configADC_IniciaADC();
     if((xTaskCreate(ADCTask, (portCHAR *)"ADC", ADC_TASK_STACK,NULL,ADC_TASK_PRIORITY, NULL) != pdTRUE))
@@ -265,6 +327,14 @@ int main(void)
         while(1);
     }
 
+    if((xTaskCreate(Switch1Task,(portCHAR *) "Sw1",SW1TASKSTACKSIZE, NULL,SW1TASKPRIO, NULL) != pdTRUE))
+    {
+        while(1);
+    }
+    if((xTaskCreate(Switch2Task,(portCHAR *) "Sw2",SW2TASKSTACKSIZE, NULL,SW2TASKPRIO, NULL) != pdTRUE))
+    {
+        while(1);
+    }
 
 	//
 	// Arranca el  scheduler.  Pasamos a ejecutar las tareas que se hayan activado.
@@ -277,4 +347,28 @@ int main(void)
 		//Si llego aqui es que algo raro ha pasado
 	}
 }
+
+// Rutinas de interrupcion
+void GPIOFIntHandler(void){
+    //Lee el estado del puerto (activos a nivel bajo)
+
+    int32_t i32PinStatus=MAP_GPIOPinRead(GPIO_PORTF_BASE,ALL_BUTTONS);
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    if (!(i32PinStatus & LEFT_BUTTON))
+    {
+        xSemaphoreGiveFromISR(miSemaforo,&xHigherPriorityTaskWoken);
+
+    }
+
+    if (!(i32PinStatus & RIGHT_BUTTON))
+    {
+        xSemaphoreGiveFromISR(miSemaforo2,&xHigherPriorityTaskWoken);
+
+    }
+
+
+    MAP_GPIOIntClear(GPIO_PORTF_BASE,ALL_BUTTONS);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
 

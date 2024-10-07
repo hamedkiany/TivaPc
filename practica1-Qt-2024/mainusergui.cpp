@@ -8,6 +8,8 @@
 
 #include<stdint.h>      // Cabecera para usar tipos de enteros con tamaño
 #include<stdbool.h>     // Cabecera para usar booleanos
+#include <QDebug>      // Se deben incluir cabeceras a los componentes que se vayan a crear en la clase
+
 
 MainUserGUI::MainUserGUI(QWidget *parent) :  // Constructor de la clase
     QWidget(parent),
@@ -226,4 +228,10 @@ void MainUserGUI::tivaStatusChanged(int status,QString message)
 }
 
 
+
+
+void MainUserGUI::on_joypad_xChanged(float value)
+{
+    qDebug("estoy en x o y");
+}
 

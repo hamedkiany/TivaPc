@@ -34,6 +34,8 @@ private slots:
     void on_pingButton_clicked();
 
 
+    void on_joypad_xChanged(float value);
+
 private:
     // funciones privadas
     void processError(const QString &s);

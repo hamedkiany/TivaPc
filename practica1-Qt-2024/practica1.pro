@@ -26,4 +26,4 @@ HEADERS  += \
 FORMS    += \
     mainusergui.ui
 
-CONFIG   += qwt analogwidgets colorwidgets #bibliotecas adicionales.
+CONFIG   += qwt analogwidgets colorwidgets  embeddeduma #bibliotecas adicionales.
