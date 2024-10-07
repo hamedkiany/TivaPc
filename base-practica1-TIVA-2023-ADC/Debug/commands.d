@@ -42,16 +42,10 @@ commands.obj: ../driverlib/debug.h
 commands.obj: ../driverlib/gpio.h
 commands.obj: ../driverlib/uart.h
 commands.obj: ../driverlib/sysctl.h
-commands.obj: ../driverlib/interrupt.h
-commands.obj: ../driverlib/i2c.h
 commands.obj: ../utils/cpu_usage.h
 commands.obj: ../utils/cmdline.h
 commands.obj: ../utils/uartstdio.h
 commands.obj: ../drivers/rgb.h
-commands.obj: ../drivers/i2cm_drv.h
-commands.obj: ../drivers/ACME_3416.h
-commands.obj: ../drivers/BMI160.h
-commands.obj: ../emul/ACMESim_i2c_slave.h
 
 ../commands.c:
 
@@ -137,10 +131,6 @@ C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/inclu
 
 ../driverlib/sysctl.h:
 
-../driverlib/interrupt.h:
-
-../driverlib/i2c.h:
-
 ../utils/cpu_usage.h:
 
 ../utils/cmdline.h:
@@ -148,12 +138,4 @@ C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/inclu
 ../utils/uartstdio.h:
 
 ../drivers/rgb.h:
-
-../drivers/i2cm_drv.h:
-
-../drivers/ACME_3416.h:
-
-../drivers/BMI160.h:
-
-../emul/ACMESim_i2c_slave.h:
 

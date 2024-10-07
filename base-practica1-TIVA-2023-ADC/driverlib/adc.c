@@ -626,12 +626,10 @@ ADCSequenceStepConfigure(uint32_t ui32Base, uint32_t ui32SequenceNum,
     //
     ASSERT((ui32Base == ADC0_BASE) || (ui32Base == ADC1_BASE));
     ASSERT(ui32SequenceNum < 4);
-    ASSERT(((ui32SequenceNum == 0) && (ui32Step < 16)) ||
-           ((ui32SequenceNum == 1) && (ui32Step < 8)) ||
+    ASSERT(((ui32SequenceNum == 0) && (ui32Step < 8)) ||
+           ((ui32SequenceNum == 1) && (ui32Step < 4)) ||
            ((ui32SequenceNum == 2) && (ui32Step < 4)) ||
-           ((ui32SequenceNum == 3) && (ui32Step < 1))); //||
- //          ((ui32SequenceNum == 4) && (ui32Step < 4)) ||
- //          ((ui32SequenceNum == 5) && (ui32Step < 1)));
+           ((ui32SequenceNum == 3) && (ui32Step < 1)));
 
     //
     // Get the offset of the sequence to be configured.
@@ -902,19 +900,14 @@ ADCProcessorTrigger(uint32_t ui32Base, uint32_t ui32SequenceNum)
     //
     // Check the arguments.
     //
-//    UARTprintf("10 intina ADCProcessorTrigger enter 1 \r\n");
-
     ASSERT((ui32Base == ADC0_BASE) || (ui32Base == ADC1_BASE));
-    ASSERT(ui32SequenceNum < 6);
+    ASSERT(ui32SequenceNum < 4);
 
     //
     // Generate a processor trigger for this sample sequence.
     //
     HWREG(ui32Base + ADC_O_PSSI) |= ((ui32SequenceNum & 0xffff0000) |
                                      (1 << (ui32SequenceNum & 0xf)));
-//    UARTprintf("11 intina ADCProcessorTrigger salir \r\n");
-
-
 }
 
 //*****************************************************************************

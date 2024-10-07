@@ -56,11 +56,8 @@ ORDERED_OBJS += \
 "./driverlib/udma.obj" \
 "./driverlib/usb.obj" \
 "./driverlib/watchdog.obj" \
-"./drivers/ACME_3416.obj" \
-"./drivers/BMI160.obj" \
 "./drivers/buttons.obj" \
 "./drivers/configADC.obj" \
-"./drivers/i2cm_drv.obj" \
 "./drivers/rgb.obj" \
 "./remotelink/crc.obj" \
 "./remotelink/remotelink.obj" \
@@ -102,7 +99,6 @@ ORDERED_OBJS += \
 "./utils/cpu_usage.obj" \
 "./utils/uartstdio.obj" \
 "../tm4c123gh6pm.cmd" \
-"../emul/ACMEsim.lib" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -119,7 +115,6 @@ RMDIR := RMDIR /S/Q
 -include FreeRTOS/Source/portable/MemMang/subdir_vars.mk
 -include driverlib/subdir_vars.mk
 -include drivers/subdir_vars.mk
--include emul/subdir_vars.mk
 -include remotelink/subdir_vars.mk
 -include usblib/device/subdir_vars.mk
 -include usblib/host/subdir_vars.mk
@@ -131,7 +126,6 @@ RMDIR := RMDIR /S/Q
 -include FreeRTOS/Source/portable/MemMang/subdir_rules.mk
 -include driverlib/subdir_rules.mk
 -include drivers/subdir_rules.mk
--include emul/subdir_rules.mk
 -include remotelink/subdir_rules.mk
 -include usblib/device/subdir_rules.mk
 -include usblib/host/subdir_rules.mk
@@ -243,7 +237,7 @@ EXE_OUTPUTS__QUOTED += \
 all: base-practica1-TIVA-2023-ADC.out
 
 # Tool invocations
-base-practica1-TIVA-2023-ADC.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+base-practica1-TIVA-2023-ADC.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
 	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -Ooff --define=ccs="ccs" --define=TARGET_IS_BLIZZARD_RB1 --define=UART_BUFFERED --define=WANT_CMDLINE_HISTORY --define=WANT_FREERTOS_SUPPORT --define=PART_TM4C123GH6PM --define=DEBUG -g --c89 --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"base-practica1-TIVA-2023-ADC.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="base-practica1-TIVA-2023-ADC_linkInfo.xml" --rom_model -o "base-practica1-TIVA-2023-ADC.out" $(ORDERED_OBJS)
@@ -254,11 +248,10 @@ base-practica1-TIVA-2023-ADC.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
 	-$(RM) "commands.obj" "main.obj" "startup_ccs.obj" "FreeRTOS\Source\croutine.obj" "FreeRTOS\Source\event_groups.obj" "FreeRTOS\Source\list.obj" "FreeRTOS\Source\queue.obj" "FreeRTOS\Source\stream_buffer.obj" "FreeRTOS\Source\tasks.obj" "FreeRTOS\Source\timers.obj" "FreeRTOS\Source\portable\CCS\ARM_CM4F\port.obj" "FreeRTOS\Source\portable\CCS\ARM_CM4F\portasm.obj" "FreeRTOS\Source\portable\MemMang\heap_4.obj" "driverlib\adc.obj" "driverlib\aes.obj" "driverlib\can.obj" "driverlib\comp.obj" "driverlib\cpu.obj" "driverlib\crc.obj" "driverlib\des.obj" "driverlib\eeprom.obj" "driverlib\emac.obj" "driverlib\epi.obj" "driverlib\epi_workaround_ccs.obj" "driverlib\flash.obj" "driverlib\fpu.obj" "driverlib\gpio.obj" "driverlib\hibernate.obj" "driverlib\i2c.obj" "driverlib\interrupt.obj" "driverlib\lcd.obj" "driverlib\mpu.obj" "driverlib\onewire.obj" "driverlib\pwm.obj" "driverlib\qei.obj" "driverlib\shamd5.obj" "driverlib\ssi.obj" "driverlib\sw_crc.obj" "driverlib\sysctl.obj" "driverlib\sysexc.obj" "driverlib\systick.obj" 
-	-$(RM) "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "drivers\ACME_3416.obj" "drivers\BMI160.obj" "drivers\buttons.obj" "drivers\configADC.obj" "drivers\i2cm_drv.obj" "drivers\rgb.obj" "remotelink\crc.obj" "remotelink\remotelink.obj" "remotelink\serialprotocol.obj" "remotelink\usb_dev_serial.obj" "remotelink\usb_serial_structs.obj" "usblib\device\usbdaudio.obj" "usblib\device\usbdbulk.obj" "usblib\device\usbdcdc.obj" "usblib\device\usbdcdesc.obj" "usblib\device\usbdcomp.obj" "usblib\device\usbdconfig.obj" "usblib\device\usbddfu-rt.obj" "usblib\device\usbdenum.obj" "usblib\device\usbdhandler.obj" "usblib\device\usbdhid.obj" "usblib\device\usbdhidgamepad.obj" "usblib\device\usbdhidkeyb.obj" "usblib\device\usbdhidmouse.obj" "usblib\device\usbdmsc.obj" "usblib\host\usbhaudio.obj" "usblib\host\usbhhid.obj" "usblib\host\usbhhidkeyboard.obj" "usblib\host\usbhhidmouse.obj" "usblib\host\usbhhub.obj" "usblib\host\usbhmsc.obj" "usblib\host\usbhostenum.obj" 
-	-$(RM) "usblib\host\usbhscsi.obj" "usblib\usbbuffer.obj" "usblib\usbdesc.obj" "usblib\usbdma.obj" "usblib\usbkeyboardmap.obj" "usblib\usbmode.obj" "usblib\usbringbuf.obj" "usblib\usbtick.obj" "usblib\usbulpi.obj" "utils\RunTimeStatsConfig.obj" "utils\cmdline.obj" "utils\cpu_usage.obj" "utils\uartstdio.obj" 
-	-$(RM) "commands.d" "main.d" "startup_ccs.d" "FreeRTOS\Source\croutine.d" "FreeRTOS\Source\event_groups.d" "FreeRTOS\Source\list.d" "FreeRTOS\Source\queue.d" "FreeRTOS\Source\stream_buffer.d" "FreeRTOS\Source\tasks.d" "FreeRTOS\Source\timers.d" "FreeRTOS\Source\portable\CCS\ARM_CM4F\port.d" "FreeRTOS\Source\portable\MemMang\heap_4.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "drivers\ACME_3416.d" "drivers\BMI160.d" "drivers\buttons.d" 
-	-$(RM) "drivers\configADC.d" "drivers\i2cm_drv.d" "drivers\rgb.d" "remotelink\crc.d" "remotelink\remotelink.d" "remotelink\serialprotocol.d" "remotelink\usb_dev_serial.d" "remotelink\usb_serial_structs.d" "usblib\device\usbdaudio.d" "usblib\device\usbdbulk.d" "usblib\device\usbdcdc.d" "usblib\device\usbdcdesc.d" "usblib\device\usbdcomp.d" "usblib\device\usbdconfig.d" "usblib\device\usbddfu-rt.d" "usblib\device\usbdenum.d" "usblib\device\usbdhandler.d" "usblib\device\usbdhid.d" "usblib\device\usbdhidgamepad.d" "usblib\device\usbdhidkeyb.d" "usblib\device\usbdhidmouse.d" "usblib\device\usbdmsc.d" "usblib\host\usbhaudio.d" "usblib\host\usbhhid.d" "usblib\host\usbhhidkeyboard.d" "usblib\host\usbhhidmouse.d" "usblib\host\usbhhub.d" "usblib\host\usbhmsc.d" "usblib\host\usbhostenum.d" "usblib\host\usbhscsi.d" "usblib\usbbuffer.d" "usblib\usbdesc.d" "usblib\usbdma.d" "usblib\usbkeyboardmap.d" "usblib\usbmode.d" "usblib\usbringbuf.d" "usblib\usbtick.d" "usblib\usbulpi.d" "utils\RunTimeStatsConfig.d" "utils\cmdline.d" 
-	-$(RM) "utils\cpu_usage.d" "utils\uartstdio.d" 
+	-$(RM) "driverlib\timer.obj" "driverlib\uart.obj" "driverlib\udma.obj" "driverlib\usb.obj" "driverlib\watchdog.obj" "drivers\buttons.obj" "drivers\configADC.obj" "drivers\rgb.obj" "remotelink\crc.obj" "remotelink\remotelink.obj" "remotelink\serialprotocol.obj" "remotelink\usb_dev_serial.obj" "remotelink\usb_serial_structs.obj" "usblib\device\usbdaudio.obj" "usblib\device\usbdbulk.obj" "usblib\device\usbdcdc.obj" "usblib\device\usbdcdesc.obj" "usblib\device\usbdcomp.obj" "usblib\device\usbdconfig.obj" "usblib\device\usbddfu-rt.obj" "usblib\device\usbdenum.obj" "usblib\device\usbdhandler.obj" "usblib\device\usbdhid.obj" "usblib\device\usbdhidgamepad.obj" "usblib\device\usbdhidkeyb.obj" "usblib\device\usbdhidmouse.obj" "usblib\device\usbdmsc.obj" "usblib\host\usbhaudio.obj" "usblib\host\usbhhid.obj" "usblib\host\usbhhidkeyboard.obj" "usblib\host\usbhhidmouse.obj" "usblib\host\usbhhub.obj" "usblib\host\usbhmsc.obj" "usblib\host\usbhostenum.obj" "usblib\host\usbhscsi.obj" "usblib\usbbuffer.obj" "usblib\usbdesc.obj" 
+	-$(RM) "usblib\usbdma.obj" "usblib\usbkeyboardmap.obj" "usblib\usbmode.obj" "usblib\usbringbuf.obj" "usblib\usbtick.obj" "usblib\usbulpi.obj" "utils\RunTimeStatsConfig.obj" "utils\cmdline.obj" "utils\cpu_usage.obj" "utils\uartstdio.obj" 
+	-$(RM) "commands.d" "main.d" "startup_ccs.d" "FreeRTOS\Source\croutine.d" "FreeRTOS\Source\event_groups.d" "FreeRTOS\Source\list.d" "FreeRTOS\Source\queue.d" "FreeRTOS\Source\stream_buffer.d" "FreeRTOS\Source\tasks.d" "FreeRTOS\Source\timers.d" "FreeRTOS\Source\portable\CCS\ARM_CM4F\port.d" "FreeRTOS\Source\portable\MemMang\heap_4.d" "driverlib\adc.d" "driverlib\aes.d" "driverlib\can.d" "driverlib\comp.d" "driverlib\cpu.d" "driverlib\crc.d" "driverlib\des.d" "driverlib\eeprom.d" "driverlib\emac.d" "driverlib\epi.d" "driverlib\flash.d" "driverlib\fpu.d" "driverlib\gpio.d" "driverlib\hibernate.d" "driverlib\i2c.d" "driverlib\interrupt.d" "driverlib\lcd.d" "driverlib\mpu.d" "driverlib\onewire.d" "driverlib\pwm.d" "driverlib\qei.d" "driverlib\shamd5.d" "driverlib\ssi.d" "driverlib\sw_crc.d" "driverlib\sysctl.d" "driverlib\sysexc.d" "driverlib\systick.d" "driverlib\timer.d" "driverlib\uart.d" "driverlib\udma.d" "driverlib\usb.d" "driverlib\watchdog.d" "drivers\buttons.d" "drivers\configADC.d" "drivers\rgb.d" 
+	-$(RM) "remotelink\crc.d" "remotelink\remotelink.d" "remotelink\serialprotocol.d" "remotelink\usb_dev_serial.d" "remotelink\usb_serial_structs.d" "usblib\device\usbdaudio.d" "usblib\device\usbdbulk.d" "usblib\device\usbdcdc.d" "usblib\device\usbdcdesc.d" "usblib\device\usbdcomp.d" "usblib\device\usbdconfig.d" "usblib\device\usbddfu-rt.d" "usblib\device\usbdenum.d" "usblib\device\usbdhandler.d" "usblib\device\usbdhid.d" "usblib\device\usbdhidgamepad.d" "usblib\device\usbdhidkeyb.d" "usblib\device\usbdhidmouse.d" "usblib\device\usbdmsc.d" "usblib\host\usbhaudio.d" "usblib\host\usbhhid.d" "usblib\host\usbhhidkeyboard.d" "usblib\host\usbhhidmouse.d" "usblib\host\usbhhub.d" "usblib\host\usbhmsc.d" "usblib\host\usbhostenum.d" "usblib\host\usbhscsi.d" "usblib\usbbuffer.d" "usblib\usbdesc.d" "usblib\usbdma.d" "usblib\usbkeyboardmap.d" "usblib\usbmode.d" "usblib\usbringbuf.d" "usblib\usbtick.d" "usblib\usbulpi.d" "utils\RunTimeStatsConfig.d" "utils\cmdline.d" "utils\cpu_usage.d" "utils\uartstdio.d" 
 	-$(RM) "driverlib\epi_workaround_ccs.d" 
 	-$(RM) "FreeRTOS\Source\portable\CCS\ARM_CM4F\portasm.d" 
 	-@echo 'Finished clean'

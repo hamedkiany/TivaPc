@@ -90,7 +90,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="freertos_demov4.c|FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c|FreeRTOS/Source/portable/Common|tm4c1236h6pm.cmd|FreeRTOS/Source/MemMang/heap_3.c|FreeRTOS/Source/MemMang/heap_5.c|FreeRTOS/Source/MemMang/heap_4.c|tm4c1233h6pz_startup_ccs.c|tm4c1236h6pm_startup_ccs.c|freertos_demo_ccs.cmd|tm4c123gh6pz.cmd|FreeRTOS/Source/portable/CCS/ARM_CM4F/oldportasm.asm|FreeRTOS/Source/portable/CCS/ARM_CM4F/oldport.c|tm4c123gh6pz_startup_ccs.c|FreeRTOS/Source/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c|FreeRTOS/Source/portable/Common|tm4c1236h6pm.cmd|FreeRTOS/Source/MemMang/heap_3.c|FreeRTOS/Source/MemMang/heap_5.c|FreeRTOS/Source/MemMang/heap_4.c|tm4c1233h6pz_startup_ccs.c|tm4c1236h6pm_startup_ccs.c|freertos_demo_ccs.cmd|tm4c123gh6pz.cmd|FreeRTOS/Source/portable/CCS/ARM_CM4F/oldportasm.asm|FreeRTOS/Source/portable/CCS/ARM_CM4F/oldport.c|tm4c123gh6pz_startup_ccs.c|FreeRTOS/Source/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

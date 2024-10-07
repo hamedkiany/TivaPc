@@ -44,11 +44,8 @@
 "./driverlib/udma.obj"
 "./driverlib/usb.obj"
 "./driverlib/watchdog.obj"
-"./drivers/ACME_3416.obj"
-"./drivers/BMI160.obj"
 "./drivers/buttons.obj"
 "./drivers/configADC.obj"
-"./drivers/i2cm_drv.obj"
 "./drivers/rgb.obj"
 "./remotelink/crc.obj"
 "./remotelink/remotelink.obj"
@@ -90,5 +87,4 @@
 "./utils/cpu_usage.obj"
 "./utils/uartstdio.obj"
 "../tm4c123gh6pm.cmd"
-"../emul/ACMEsim.lib"
 -llibc.a

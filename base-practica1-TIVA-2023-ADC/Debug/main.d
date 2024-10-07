@@ -41,7 +41,6 @@ main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/So
 main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/include/queue.h
 main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/include/semphr.h
 main.obj: ../utils/cpu_usage.h
-main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/include/timers.h
 main.obj: ../drivers/rgb.h
 main.obj: ../drivers/configADC.h
 main.obj: ../commands.h
@@ -51,8 +50,6 @@ main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/remotelink/
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdlib.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/string.h
 main.obj: C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/xlocale/_string.h
-main.obj: ../drivers/ACME_3416.h
-main.obj: C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/drivers/i2cm_drv.h
 
 ../main.c:
 
@@ -136,8 +133,6 @@ C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/inclu
 
 ../utils/cpu_usage.h:
 
-C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/FreeRTOS/Source/include/timers.h:
-
 ../drivers/rgb.h:
 
 ../drivers/configADC.h:
@@ -155,8 +150,4 @@ C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/stdlib.h:
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/string.h:
 
 C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include/xlocale/_string.h:
-
-../drivers/ACME_3416.h:
-
-C:/Users/hamed/OneDrive/micro/base-practica1-TIVA-2023-ADC/drivers/i2cm_drv.h:
 

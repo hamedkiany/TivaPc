@@ -411,7 +411,6 @@ TimerConfigure(uint32_t ui32Base, uint32_t ui32Config)
         HWREG(ui32Base + TIMER_O_TBMR) = (((ui32Config >> 8) & 0xff) |
                                           TIMER_TBMR_TBPWMIE);
     }
-
 }
 
 //*****************************************************************************

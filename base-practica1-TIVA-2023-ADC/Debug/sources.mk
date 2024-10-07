@@ -117,7 +117,6 @@ FreeRTOS/Source/portable/CCS/ARM_CM4F \
 FreeRTOS/Source/portable/MemMang \
 driverlib \
 drivers \
-emul \
 remotelink \
 usblib/device \
 usblib/host \
