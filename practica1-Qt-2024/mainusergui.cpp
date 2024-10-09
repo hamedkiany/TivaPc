@@ -232,6 +232,10 @@ void MainUserGUI::tivaStatusChanged(int status,QString message)
 
 void MainUserGUI::on_joypad_xChanged(float value)
 {
-    qDebug("estoy en x o y");
+    float valuex,valuey;
+    valuex= ui->joypad->x();
+    valuey= ui->joypad->y();
+             qDebug("%f  %f " , valuex,valuey);
+
 }
 

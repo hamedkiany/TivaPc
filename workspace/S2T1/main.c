@@ -25,7 +25,7 @@
 #include<stdint.h>
 #include<stdbool.h>
 #include "tm4c123gh6pm.h"
-
+#include "PWMLib.h"
 //*****************************************************************************
 //
 //! \addtogroup example_list
@@ -64,34 +64,34 @@ main(void)
     GPIO_PORTF_DIR_R = 0x08;
     GPIO_PORTF_DEN_R = 0x08;
     GPIO_PORTF_DATA_R &= ~(0x08);
-
+    activatePWM(55,95);
     //
     // Loop forever.
     //
     while(1)
     {
-        //
-        // Turn on the LED.
-        //
-        GPIO_PORTF_DATA_R |= 0x08;
-
-        //
-        // Delay for a bit.
-        //
-        for(ulLoop = 0; ulLoop < 200000; ulLoop++)
-        {
-        }
-
-        //
-        // Turn off the LED.
-        //
-        GPIO_PORTF_DATA_R &= ~(0x08);
-
-        //
-        // Delay for a bit.
-        //
-        for(ulLoop = 0; ulLoop < 200000; ulLoop++)
-        {
-        }
+//        //
+//        // Turn on the LED.
+//        //
+//        GPIO_PORTF_DATA_R |= 0x08;
+//
+//        //
+//        // Delay for a bit.
+//        //
+//        for(ulLoop = 0; ulLoop < 200000; ulLoop++)
+//        {
+//        }
+//
+//        //
+//        // Turn off the LED.
+//        //
+//        GPIO_PORTF_DATA_R &= ~(0x08);
+//
+//        //
+//        // Delay for a bit.
+//        //
+//        for(ulLoop = 0; ulLoop < 200000; ulLoop++)
+//        {
+//        }
     }
 }
